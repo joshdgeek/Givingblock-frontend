@@ -1,0 +1,131 @@
+/* Introductory Section */
+.intro-section {
+    display: flex;
+    /* Create a flex container */
+    justify-content: space-between;
+    /* Space out child divs */
+    align-items: center;
+    /* Center items vertically */
+    min-height: 30vh;
+    /* Set height to 30% of the viewport */
+    margin: 20px;
+    /* Add some spacing around the section */
+    padding: 20px;
+    /* Inner spacing */
+    background-color: #f5f5f5;
+    /* Light background color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Subtle box shadow */
+    border-radius: 10px;
+    /* Slightly rounded corners */
+    overflow: hidden;
+    /* Prevent overflowing content */
+}
+
+/* Text Section */
+.intro-text {
+    flex: 1;
+    /* Take up half of the section */
+    margin-right: 20px;
+    /* Space between text and image */
+    padding: 20px;
+    /* Add padding for better spacing */
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Subtle background */
+    border-radius: 8px;
+    /* Rounded corners for a polished look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    /* Subtle shadow for depth */
+    backdrop-filter: blur(5px);
+    /* Add a light glass effect */
+    text-align: center;
+    /* Center the content */
+}
+
+/* Text Content */
+.intro-text h2 {
+    font-size: 2.5rem;
+    /* Larger font for heading */
+    font-weight: bold;
+    /* Make it stand out */
+    color: #2c3e50;
+    /* Deep, modern text color */
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    /* Make it more attention-grabbing */
+    letter-spacing: 1.5px;
+    /* Add spacing for readability */
+}
+
+.intro-text p {
+    font-size: 1rem;
+    /* Slightly larger font for readability */
+    line-height: 1.8;
+    /* Better spacing between lines */
+    color: #34495e;
+    /* Complementary text color */
+    margin: 0;
+    padding: 10px 20px;
+}
+
+/* Image Section */
+.intro-image {
+    flex: 1;
+    /* Take up the remaining half */
+    text-align: center;
+    /* Center the image */
+    display: flex;
+    /* Ensure the image fits within the container */
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+}
+
+.intro-image img {
+    max-width: 100%;
+    /* Ensure the image takes up full width but maintains aspect ratio */
+    height: auto;
+    /* Maintain aspect ratio */
+    max-height: 100%;
+    /* Ensure the image doesn't overflow vertically */
+    border-radius: 8px;
+    /* Slightly rounded image corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for the image */
+}
+
+/* Responsive Design for Mobile View */
+@media screen and (max-width: 768px) {
+    .intro-section {
+        flex-direction: column;
+        /* Stack text and image vertically */
+        align-items: center;
+        /* Center align the content */
+        text-align: center;
+        /* Center the text alignment */
+    }
+
+    .intro-text {
+        margin-right: 0;
+        /* Remove right margin */
+        margin-bottom: 20px;
+        /* Add space between text and image */
+        padding: 10px;
+        /* Reduce padding for smaller screens */
+    }
+
+    .intro-image {
+        width: 90%;
+        /* Ensure the image fits within mobile view */
+        margin-top: 20px;
+        /* Add some spacing above the image */
+    }
+
+    .intro-image img {
+        max-width: 100%;
+        /* Ensure the image fits within the div */
+        height: auto;
+        /* Maintain aspect ratio */
+    }
+}

@@ -1,0 +1,169 @@
+* {
+    padding: 0re;
+    margin: 0rem;
+}
+
+body {
+    background-color: rgb(255, 255, 255);
+
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Ensure it spans the full viewport height */
+}
+
+.hero {
+    background: #ff0000;
+    height: 10rem;
+
+}
+
+/* Christmas Header Styles */
+.christmas-header {
+    background: inherit;
+    /* Festive red gradient */
+    border-bottom: 5px solid #fff;
+    /* Snow-like border */
+    position: relative;
+    text-align: center;
+    padding: 50px 20px;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    /* Cozy font */
+    overflow: hidden;
+}
+
+/* Snowflake Decoration */
+.christmas-header::before,
+.christmas-header::after {
+    content: "❄ ❄  ❄ ❄  ❄ ❄  ❄ ❄  ❄   ❄  ❄ ❄  ❄  ❄   ❄  \A❄  ❄ ❄  ❄ ❄  ❄  ❄  ❄ ❄  ❄   ❄   ❄  \A❄  ❄ ❄ ❄";
+    white-space: pre;
+    /* Enables line breaks */
+    font-size: 30px;
+    color: rgba(255, 255, 255, 0.884);
+    position: absolute;
+    top: 0;
+    left: 10%;
+    animation: snowfall 5s linear infinite;
+}
+
+
+.christmas-header::before {
+    top: 0;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.christmas-header::after {
+    top: 0;
+    right: 10%;
+    animation-delay: 1s;
+}
+
+/* Header Title */
+.christmas-header h1 {
+    font-size: 3rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    /* Shadow for a glowing effect */
+}
+
+/* Snowfall Animation */
+@keyframes snowfall {
+    0% {
+        transform: translateY(-100px);
+    }
+
+    100% {
+        transform: translateY(100vh);
+    }
+}
+
+
+
+/* suprise box*/
+
+/* Jingle Surprise Box */
+.jingle-box {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #00a2ff;
+    /* Bright gold for festive feel */
+    margin: 5px 50vw auto;
+    border: 3px solid #ff9900;
+    /* Contrasting border */
+    border-radius: 8px;
+    /* Rounded corners */
+    animation: tilt 1.5s infinite ease-in-out;
+    /* Tilting animation */
+    z-index: 1;
+}
+
+/* Box Lid */
+.jingle-box .box-lid {
+    position: absolute;
+    width: 120%;
+    height: 20px;
+    background-color: #ffee00;
+    /* Lid color */
+    top: -10px;
+    left: -10%;
+    border-radius: 4px 4px 0 0;
+    transform-origin: center bottom;
+    /* Pivot point for tilt */
+    animation: tilt 1.5s infinite ease-in-out;
+    /* Sync lid with box */
+}
+
+/* Box Body */
+.jingle-box .box-body {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(45deg,
+            #00c3ff,
+            #ffcc00 10px,
+            #ffe066 10px,
+            #ffe066 20px);
+    /* Pattern inside box */
+    border-radius: 0 0 8px 8px;
+    /* Rounded corners at bottom */
+}
+
+/* Tilting Animation */
+@keyframes tilt {
+    0% {
+        transform: rotate(-10deg);
+    }
+
+    50% {
+        transform: rotate(10deg);
+    }
+
+    100% {
+        transform: rotate(-10deg);
+    }
+}
+
+
+
+
+.body {
+    height: 10rem;
+    border-color: rgb(0, 195, 255);
+}
+
+.footer {
+    height: 20px;
+    background-color: aqua;
+    bottom: 0px;
+    width: 100vw;
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+}
