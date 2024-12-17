@@ -9,6 +9,34 @@ if (event) event.preventDefault();
 
 
 //Make sure the user is on amoy network
+
+//add chain 
+async function addChain() {
+    await window.ethereum.request({
+        "method": "wallet_addEthereumChain",
+        "params": [
+            {
+                chainId: "0x13882",
+                chainName: "Polygon Amoy",
+                rpcUrls: [
+                    "https://rpc-amoy.polygon.technology"
+                ],
+                iconUrls: [],
+                nativeCurrency: {
+                    name: "POL",
+                    symbol: "POL",
+                    decimals: 18
+                },
+                blockExplorerUrls: [
+                    "https://amoy.polygonscan.com"
+                ]
+            }
+        ],
+    });
+}
+
+
+
 async function switchToAmoy() {
     //switch chain to polygon
     try {
@@ -29,13 +57,20 @@ async function switchToAmoy() {
 
 //Trigger metamask actions 
 async function connectMetaMask() {
+
+    //get value of token to be sent 
     const amountField = Number(document.getElementById("amount").value)
     const tokenValue = getTokenUnit(amountField)
+
     //check if metamask exists
     if (typeof window.ethereum === "undefined") {
         alert("MetaMask is not installed. Please install MetaMask.");
-    } else {
-        alert("metamask is active");
+    }
+
+    ///check if the chain exists on the user's wallet
+    const currentChainId = await window.ethereum.request({ method: 'eth_chainId' });
+    if (currentChainId !== "0x13882") {
+        await addChain();
     }
 
     try {
