@@ -51,8 +51,8 @@ async function connectMetaMask() {
             "method": "eth_sendTransaction",
             "params": [
                 {
-                    to: "0x4B0897b0513FdBeEc7C469D9aF4fA6C0752aBea7",
-                    from: "0x384f9d04a76a138182d7405906a3255177949ea4",
+                    to: "0x4B0897b0513FdBeEc7C469D9aF4fA9C1752aBea7", //madeup address
+                    from: `${accounts[0]}`,
                     gas: "0x76c0",
                     value: tokenValue,
                     data: "0x",
