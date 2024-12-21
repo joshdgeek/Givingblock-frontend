@@ -2,7 +2,7 @@ import { getTokenUnit } from "./testhex.js";
 
 //Getting form eleents by ID
 const connectButton = document.getElementById("connectButton");
-const addressofSender = document.getElementById("crypto-address");
+const addressField = document.getElementById("crypto-address");
 
 
 if (event) event.preventDefault();
@@ -64,13 +64,13 @@ async function connectMetaMask() {
 
     //check if metamask exists
     if (typeof window.ethereum === "undefined") {
-        alert("MetaMask is not installed. Please install MetaMask.");
+        alert("MetaMask is not installed. Please load this app in your MetaMask or any browser with metamask extension.");
     }
 
-    ///check if the chain exists on the user's wallet
+    //check if the chain exists on the user's wallet
     const currentChainId = await window.ethereum.request({ method: 'eth_chainId' });
     if (currentChainId !== "0x13882") {
-        await addChain();
+        //await addChain();
     }
 
     try {
@@ -79,14 +79,14 @@ async function connectMetaMask() {
             method: "eth_requestAccounts",
         });
 
-        await switchToAmoy();
+        //await switchToAmoy();
 
         //SEND TRANSACTIONS 
         await window.ethereum.request({
             "method": "eth_sendTransaction",
             "params": [
                 {
-                    to: "0x4B0897b0513FdBeEc7C469D9aF4fA9C1752aBea7", //madeup address
+                    to: `${addressField.value}`, //madeup address
                     from: `${accounts[0]}`,
                     gas: "0x76c0",
                     value: tokenValue,
@@ -103,7 +103,6 @@ async function connectMetaMask() {
         console.log(tokenValue)
         console.log(chain)
         connectButton.value = `connected`
-        addressofSender.value = accounts[0]
         alert("successfully on polygon")
 
     } catch (error) {

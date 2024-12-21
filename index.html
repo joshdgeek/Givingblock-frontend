@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./styles/forms.css">
     <script type="module" src="./scripts/testhex.js" defer></script>
     <script type="module" src="./scripts/connect.js" defer></script>
-    </link>
+    <script type="module" src="./scripts/smartContract/joinSantaHelpers.js" defer></script>
     <title>Document</title>
 </head>
 
@@ -52,7 +52,7 @@
             <div class="register-section">
                 <h2>Register with The GivingBlock</h2>
                 <p>Join our platform to participate in rewarding good deeds and supporting charities.</p>
-                <button class="register-button">Register Now</button>
+                <button class="register-button" id="reg-btn">Register Now</button>
             </div>
 
             <!-- Donation Form Section -->
@@ -62,7 +62,7 @@
                 <form class="donation-form">
                     <label for="crypto-address">Your Wallet Address:</label>
                     <input type="text" id="crypto-address" name="crypto-address" placeholder="Enter your wallet address"
-                        readonly>
+                        required>
 
                     <label for="amount">Amount to Donate:</label>
                     <input type="number" id="amount" name="amount" placeholder="Enter amount in crypto" required>
